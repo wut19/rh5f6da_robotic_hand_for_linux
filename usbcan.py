@@ -69,10 +69,8 @@ class INIT_CONFIG(Structure):
 class ECAN(object):
     def __init__(self):
         cwdx = os.getcwd()
-        self.dll0 = CDLL(cwdx + '/libusb.so', mode = RTLD_GLOBAL)
-        # self.dll1 = CDLL(cwdx + '/libusb-1.0.so', mode = RTLD_GLOBAL)
-        # self.dll2 = CDLL(cwdx + '/libusb-0.1.so.4', mode = RTLD_GLOBAL)
-        self.dll = cdll.LoadLibrary(cwdx + '/libECanVci.so.1')
+        self.dll0 = CDLL(cwdx + '/test_dependencies/libusb.so', mode = RTLD_GLOBAL)
+        self.dll = cdll.LoadLibrary(cwdx + '/test_dependencies/libECanVci.so.1')
         if self.dll == None:
             print("DLL Couldn't be loaded")
 
